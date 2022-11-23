@@ -1,0 +1,195 @@
+@import "_var";
+@import "_mixins";
+
+.form {
+  background: linear-gradient(21deg, #dd03e4, #5611ec);
+  &__timer {
+    display: flex;
+    justify-content: center;
+  }
+  &__timer {
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+
+    background-color: $colorWhite;
+    border-radius: 15px;
+
+    box-shadow: 4px 8px 40px rgba($color: #000000, $alpha: 0.2);
+  }
+  &__timer-title {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+  &__timer-item {
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__timer-item:last-child {
+    margin-right: 0;
+  }
+  &__timer-val {
+    font-size: 30px;
+    line-height: 30px;
+    color: $colorPrimary;
+    font-weight: 600;
+  }
+  &__timer-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &__timer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__content {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  &__content-left {
+    margin-right: 30px;
+  }
+  &__price {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__price-left,
+  &__price-right {
+    padding: 15px;
+    background-color: $colorWhite;
+    border-radius: 15px;
+  }
+  &__price-left {
+    position: relative;
+    color: $colorGrey;
+    margin-right: 30px;
+    font-size: 14px;
+  }
+  &__price-left::before {
+    border-bottom: 3px solid red;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    transform: rotate(-12deg);
+  }
+  &__content-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__right-title {
+    font-size: 26px;
+    line-height: 32px;
+    margin-bottom: 30px;
+  }
+  &__right-item {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  &__right-input {
+    width: 400px;
+    height: 50px;
+    padding-left: 20px;
+    font-size: 18px;
+    line-height: 20px;
+    outline: none;
+    background-color: $colorWhite;
+    border-radius: 15px;
+    border: 1px solid $colorGrey;
+    transition-duration: background-color;
+    @include transition;
+    cursor: pointer;
+  }
+  &__right-input.valid {
+    border: 1px solid green;
+  }
+  &__right-input.invalid {
+    border: 1px solid red;
+
+  }
+  &__right-input::placeholder {
+    font-size: 16px;
+    line-height: 20px;
+    color: $colorGrey;
+  }
+  &__btn {
+    margin: 0 auto;
+    color: $colorWhite;
+    border: 1px solid $colorWhite;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .form {
+    &__right-input:hover {
+      background-color: $colorGreyLigth;
+    }
+  }
+}
+
+//active, focus
+.form {
+  &__right-input:active {
+    background-color: $colorGreyLigth;
+  }
+  &__right-input:focus-visible {
+    background-color: $colorGreyLigth;
+    outline: none;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .form {
+    &__content {
+      flex-direction: column;
+    }
+    &__content-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__content-left {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+    &__timer-title {
+      text-align: center;
+    }
+    &__right-form {
+      width: 100%;
+    }
+    &__right-label {
+      display: flex;
+      justify-content: center;
+    }
+    &__right-input {
+      max-width: 400px;
+      width: 100%;
+    }
+  }
+}

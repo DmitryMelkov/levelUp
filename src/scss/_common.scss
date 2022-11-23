@@ -1,0 +1,227 @@
+@import "_var";
+@import "_mixins";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  font-size: 22px;
+  line-height: 34px;
+  font-weight: 600;
+  color: $colorBlack;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  list-style-type: none;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-shadow: none;
+  font-weight: 800;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 58.79px;
+  font-weight: 800;
+  color: $colorBlack;
+}
+
+h3 {
+  color: $colorBlack;
+}
+
+.section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.title-reset {
+  margin: 0;
+}
+
+.descr-reset {
+  margin: 0;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.btn-reset {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+  padding: 14px 35px;
+  border: 2px solid $colorPrimary;
+  border-radius: 15px;
+  color: $colorPrimary;
+
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 600;
+
+  transition-property: color, background-color, transform;
+  @include transition;
+  cursor: pointer;
+}
+
+.content-btn {
+  display: block;
+  color: $colorWhite;
+  background-color: $colorPrimary;
+  border-radius: 10px;
+  border: 2px solid $colorPrimary;
+  transition: all 0.3s ease-in-out;
+}
+
+.section__title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+//hover
+@media (min-width: 1024px) {
+  .content-btn:hover {
+    background-color: $colorPrimaryLight;
+    border: 2px solid $colorPrimaryLight;
+  }
+  .btn:hover {
+    color: $colorWhite;
+    background-color: $colorPrimary;
+    transform: scale(1.1);
+  }
+}
+
+//active, focus
+.content-btn:active {
+  background-color: $colorPrimaryShade;
+  border: 2px solid $colorPrimaryShade;
+}
+.content-btn:focus-visible:not(:active) {
+  background-color: $colorPrimaryLight;
+  border: 2px solid $colorPrimaryShade;
+  outline: none;
+}
+
+.btn:active {
+  color: $colorWhite;
+  background-color: $colorPrimaryShade;
+  transform: scale(1.1);
+}
+.btn:focus-visible:not(:active) {
+  color: $colorWhite;
+  background-color: $colorPrimaryShade;
+  outline: none;
+}
+
+.container {
+  max-width: 1260px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+// import swiper
+@import "../../node_modules/swiper/swiper.scss";
+@import "../../node_modules/swiper/modules/pagination/pagination.scss";
+
+//убрать стрелки от номера у инпута
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .container {
+    max-width: 952px;
+  }
+}
+
+@media (max-width: 633px) {
+  h2 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
