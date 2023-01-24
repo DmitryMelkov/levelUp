@@ -116,7 +116,6 @@
     border: 1px solid $colorGrey;
     transition-duration: background-color;
     @include transition;
-    cursor: pointer;
   }
   &__right-input.valid {
     border: 1px solid green;

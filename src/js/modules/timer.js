@@ -1,5 +1,5 @@
 export function timer() {
-  const sale = new Date('Dec 15 2022 00:00:00');
+  const sale = new Date('feb 15 2023 00:00:00');
 
   const daysVal = document.querySelector('.form__timer-days .form__timer-val');
   const hoursVal = document.querySelector('.form__timer-hours .form__timer-val');
